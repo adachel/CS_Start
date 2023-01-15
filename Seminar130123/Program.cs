@@ -1,11 +1,14 @@
-﻿
+﻿//На вход принимает число и выдаёт его квадрат 
+//(число умноженное на само себя).
+
 //Console.Clear();
 //Console.Write("Введите число: ");
 //int n = Convert.ToInt32(Console.ReadLine());
 //Console.WriteLine($"Результат: {n * n}");
 
 
-// Task 1
+// На вход принимает два числа и проверяет, 
+//является ли первое число квадратом второго.
 
 //Console.Clear();
 //Console.Write("Введите 1-ое число: ");
@@ -18,7 +21,8 @@
 //    Console.WriteLine("no");
 
 
-// Task 3
+// На вход принимает одно число (N), 
+//а на выходе показывает день недели.
 
 //Console.Clear();
 //Console.Write("Введите день недели: ");
@@ -67,7 +71,7 @@
 
 // Task 7
 
-//Console.Clear();
-//Console.Write("Введите число: ");
-//int n = Convert.ToInt32(Console.ReadLine());
-//Console.WriteLine(n % 10);
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(n % 10);
