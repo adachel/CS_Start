@@ -69,9 +69,10 @@
 //}
 
 
-// Task 7
-
+// Вывести последнюю цифру числа. (Остаток деления на 10)
+/*
 Console.Clear();
 Console.Write("Введите число: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(n % 10);
+*/
