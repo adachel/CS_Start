@@ -1,5 +1,5 @@
 ﻿Console.Clear();
-Console.WriteLine("Четные числа до числа N");
+Console.WriteLine("Четные числа от 1 до числа N");
 Console.WriteLine("Введите число N ");
 int N = Convert.ToInt32(Console.ReadLine());
 int b = N % 2; // Находим остаток числа
