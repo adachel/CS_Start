@@ -2,16 +2,20 @@
 // и на выходе показывает вторую цифру этого числа.
 
 Console.Clear();
-Console.WriteLine("Введите трехзначное число ");
+Console.Write("Введите трехзначное число: ");
 int a = Convert.ToInt32(Console.ReadLine());
-int x = a /100;
 
-if(x < 1 || x >= 10 )
+if(a /100 < 1 || a / 100 >= 10 )
 {
-   Console.WriteLine($"Это не трехзначное число {a}"); 
+   Console.WriteLine($"{a} не трехзначное число"); 
+   return;
 }
 
+int x = a / 100; //Выдляем первую цифру числа
+int y = a % 10; // Выделяем последнюю цифру числа
 
+int Result = x * 10 + y; //Результат
 
+Console.WriteLine($"Новое число {Result}"); 
 
 
