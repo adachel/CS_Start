@@ -5,17 +5,21 @@ Console.Clear();
 Console.Write("Введите трехзначное число: ");
 int a = Convert.ToInt32(Console.ReadLine());
 
-if(a /100 < 1 || a / 100 >= 10 )
+if (a > -100  && a < 100) 
 {
-   Console.WriteLine($"{a} не трехзначное число"); 
-   return;
+    Console.WriteLine("Это не трехзначное число"); 
+    return;
 }
 
-int x = a / 100; //Выдляем первую цифру числа
-int y = a % 10; // Выделяем последнюю цифру числа
+else if (a <= -1000 || a >= 1000) 
+{
+    Console.WriteLine("Это не трехзначное число"); 
+    return;
+}
 
-int Result = x * 10 + y; //Результат
+int x = a / 10; 
+int y = x % 10; 
 
-Console.WriteLine($"Новое число {Result}"); 
+Console.WriteLine($"Вторая цифра числа {y}"); 
 
 

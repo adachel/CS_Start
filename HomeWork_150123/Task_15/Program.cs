@@ -2,7 +2,7 @@
 // обозначающую день недели, и проверяет, является ли этот день выходным.
 
 Console.Clear();
-Console.Write("Введите число дня недели: ");
+Console.Write("Введите номер дня недели: ");
 int a = Convert.ToInt32(Console.ReadLine());
 
 if (a > 7 || a < 1)
