@@ -10,8 +10,23 @@
 // находясь перед некоторым кустом заданной во входном файле грядки.
 
 Console.Clear();
-Console.Write("Введите число кустов: ");
-int N = Convert.ToInt32(Console.ReadLine());
+int[] arr = {4, 3, 2, 1}; // Урожай с кустов
 
-int a[i] = [1, 2, 3, 4];
+int max = 0;
+int b = arr[arr.Length -1] + arr[0] + arr[1];
+int c = arr[arr.Length -2] + arr[arr.Length -1] + arr[0];
 
+if (b > c) 
+    max = b; 
+else 
+    max = c;
+
+for (int i = 0; i < arr.Length - 2; i++)
+{   
+    int a = arr[i] + arr[i + 1] + arr[i + 2];
+
+    if (a > max)
+    max = a;
+}
+
+Console.WriteLine($"Максимальное число ягод: {max} ");
