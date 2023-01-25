@@ -1,22 +1,4 @@
-﻿// Найти факториал числа
-/*
-Console.Clear();
-Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-
-int f = 0;
-for (int i = 1; n < 0; i = i * 10)
-{
-    n = n / i;
-    f = f + n;
-
-    Console.Write($" {f} ");
-}
-*/
-
-
-// Task 28
-
+﻿// Task 28 произведение всех чисел до "n" влючително
 
 Console.Clear();
 Console.Write("Введите число: ");

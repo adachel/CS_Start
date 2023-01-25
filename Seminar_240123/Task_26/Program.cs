@@ -1,22 +1,4 @@
-﻿
-/* // Нахера мудрить
-Console.Clear();
-Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine()); 
-
-
-for (int i = 1; n / i < 0; i=+10)
-    {
-        int j = 0;
-        int a = n / i;
-        j = i + 1;
-        Console.WriteLine($"Введите число: {a} ");
-        Console.WriteLine($"Введите число: {j} ");
-    }
-*/
-
-
-// Task 26 // вот гораздо проще
+﻿// Task 26 // Программа, которая принимает на вход число и выдаёт количество цифр в числе.
 
 Console.Clear();
 Console.Write("Введите число: ");
