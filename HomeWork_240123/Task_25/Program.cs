@@ -14,5 +14,5 @@ Console.WriteLine($"Число {n} в степени {a} равно {c} ");
 
 Console.WriteLine();
 
-double b = Math.Pow(n, a); // Для проверки
-Console.WriteLine($"Проверка {n} в степени {a} равно {b} ");
+//double b = Math.Pow(n, a); // Для проверки
+//Console.WriteLine($"Проверка {n} в степени {a} равно {b} ");
