@@ -26,3 +26,4 @@ InputArray(array);
 Console.WriteLine($"Начальный масссив: [{string.Join(", ", array)}]"); // Выводим первый массив
 ReplaceElement(array);
 Console.WriteLine($"Конечный масссив: [{string.Join(", ", array)}]"); // Выводи итоговый массив
+
