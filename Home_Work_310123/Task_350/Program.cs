@@ -6,7 +6,7 @@
 
 Console.Clear();
 Console.Write("Введите не более восьми букв и цифр: ");
-string? n = Console.ReadLine();
+string? n = Console.ReadLine()!;
 int length = Convert.ToInt32(n.Length); // Присваиваем Length длину текста.
 if (length >8)
 {
