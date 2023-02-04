@@ -16,6 +16,9 @@ void InputMatrix(int[,] matrix)
 
 Console.Clear();
 Console.Write("Введите размеры массива: ");
-int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// Console.ReadLine() - это строка. Split() - разделяет строку через пробел, т.к. в скобках пусто.
+// int.Parse(x)) - переводит строку в число. Select(x => int.Parse(x) - каждое значение в число.
+// ToArray() - собирает числа в массив.
 int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
