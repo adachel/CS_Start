@@ -1,4 +1,4 @@
-﻿/*
+﻿
 Console.Clear();
 string[,] table = new string[2, 5]; // Две строки с индексами 0.0 и 1.0
                                     // Пять столбцов с инд с 0.0 до 0.4
@@ -12,7 +12,8 @@ for (int rows = 0; rows < 2; rows++) // Создаем строки
         Console.WriteLine($" -{table[rows, columns]}- ");
     }
 }
-*/
+
+
 /*
 Console.Clear();
 int[,] matrix = new int[3, 4];
@@ -28,7 +29,7 @@ for (int i = 0; i < matrix.GetLength(0); i++) // matrix.GetLength(0) конец 
 
 
 
-
+/*
 void PrintArray(int[,] matr) // В виде процедуры
 {
 for (int i = 0; i < matr.GetLength(0); i++) // matrix.GetLength(0) конец массива, вместо "3".
@@ -59,3 +60,4 @@ PrintArray(matrix);
 Console.WriteLine();
 FillArray(matrix);
 PrintArray(matrix);
+*/
