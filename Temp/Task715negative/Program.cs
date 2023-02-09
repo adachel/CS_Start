@@ -44,7 +44,7 @@ void ReleaseMatrix(int[,] matrixFirst, int[,] matrixSecond)
  
 Console.Clear();
 Console.Write("Введите кол-во строк и столбцов: ");
-string[] num = Console.ReadLine().Split(' '); // ввод двух чисел в одну строку
+string[] num = Console.ReadLine()!.Split(' '); // ввод двух чисел в одну строку
 int n = int.Parse(num[0]);
 int m = int.Parse(num[1]);
 int[,] matrixFirst = new int[n, m];
