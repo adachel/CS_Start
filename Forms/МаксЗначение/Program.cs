@@ -1,2 +1,2 @@
 ﻿// Максимальное значение
-int a = int.MaxValue;
+//int a = int.MaxValue;

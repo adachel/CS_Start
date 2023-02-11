@@ -1,4 +1,4 @@
-﻿// Выдает цифры в терминале
+﻿// Выдает случайные цифры в поле терминала
 
 Random r = new Random();
 Console.CursorVisible = false;

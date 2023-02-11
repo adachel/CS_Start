@@ -8,7 +8,7 @@ void InputMatrixFirst(int[,] matrixFirst)
 {
     for (int i = 0; i < matrixFirst.GetLength(0); i++)
     {
-        string? input = Convert.ToString(Console.ReadLine());
+        string? input = Convert.ToString(Console.ReadLine())!;
         for (int j = 0; j < input.Length; j++)
         {
             matrixFirst[i, j] = input[j];
@@ -16,17 +16,19 @@ void InputMatrixFirst(int[,] matrixFirst)
     }
 }
  
+ 
 void InputMatrixSecond(int[,] matrixSecond)
 {
     for (int i = 0; i < matrixSecond.GetLength(0); i++)
     {
-        string? input = Console.ReadLine();
+        string? input = Console.ReadLine()!;
         for (int j = 0; j < input.Length; j++)
         {
             matrixSecond[i, j] = input[j];
         }
     }
 }
+ 
  
 void ReleaseMatrix(int[,] matrixFirst, int[,] matrixSecond)
 {
@@ -42,6 +44,7 @@ void ReleaseMatrix(int[,] matrixFirst, int[,] matrixSecond)
     Console.WriteLine($"{count}");
 }
  
+ 
 Console.Clear();
 Console.Write("Введите кол-во строк и столбцов: ");
 string[] num = Console.ReadLine()!.Split(' '); // ввод двух чисел в одну строку
@@ -52,4 +55,4 @@ int[,] matrixSecond = new int[n, m];
 InputMatrixFirst(matrixFirst);
 Console.WriteLine();
 InputMatrixSecond(matrixSecond);
-ReleaseMatrix(matrixFirst, matrixSecond);
+	ReleaseMatrix(matrixFirst, matrixSecond);
