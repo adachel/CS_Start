@@ -60,7 +60,7 @@ Console.WriteLine(f(n, m));
 // int n = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine(f(n));
 
-
+/*
 // Задача 69 Степень числа
 int rec(int a, int b)
 {
@@ -72,7 +72,7 @@ Console.Clear();
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(rec(a, b));
-
+*/
 
 
 
@@ -91,3 +91,18 @@ Console.WriteLine(rec(a, b));
 // Console.Write("Введите число: ");
 // int n = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine(f(n));
+
+
+
+int f(int n)
+{
+  if (n == 0) 
+    return 0;
+
+  return f(n-1)+1;
+}
+
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(f(n));
