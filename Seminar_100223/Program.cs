@@ -1,11 +1,11 @@
 ﻿// Задача 63. Факториал
 // 1-ой вариант
-// string f(int n)
-// {
-//   if (n == 1)
-//     return "1";
-//   return f(n - 1) + $", {n}";
-// }
+string f(int n)
+{
+  if (n == 1)
+    return "1";
+  return f(n - 1) + $", {n}";
+}
 
 // 2-ой вариант
 // void rec(int n)
@@ -19,10 +19,10 @@
 //     }
 // }
 
-// Console.Clear();
-// Console.Write("Введите число: ");
-// int n = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine(f(n));
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(f(n));
 
 
 
@@ -94,15 +94,15 @@ Console.WriteLine(rec(a, b));
 
 
 
-int f(int n)
-{
-  if (n == 0) 
-    return 0;
+// int f(int n)
+// {
+//   if (n == 0) 
+//     return 0;
 
-  return f(n-1)+1;
-}
+//   return f(n-1)+1;
+// }
 
-Console.Clear();
-Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(f(n));
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine(f(n));
