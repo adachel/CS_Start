@@ -41,7 +41,7 @@ Console.Write("Введите число N от 1 до 31: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите числа через пробел: ");
 int[] array = new int[n];
-array = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+array = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 
 
 
