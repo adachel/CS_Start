@@ -1,38 +1,43 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Console.WriteLine("Введите размер массива: ");
-int n = Convert.ToInt32(Console.ReadLine());
-int[] a = {7, 6, 3, 9, 8, 5, 1, 0, 2, 4};
-int pivot = (n - 0) / 2;
-Console.WriteLine($"Pivot = {pivot}, Элемент[pivot] = {a[pivot]}");
-for(int y = 0; y < n; y++) 
-    Console.Write($" {a[y]}");
-
-int temp = 0;
-
-Console.WriteLine();
-Console.WriteLine();
-
-int Frec(int[] a, int n, int temp)
+﻿int F(int[] arr, int min, int max)
 {
-    //int i = 0;
-    //int j = n - 1;
-
-
-for(int i = 0; i < pivot; i++)
-{
-    for(int j = n - 1; j >= pivot; j--)
+    int p = min - 1;
+    int temp = 0;
+    for (int i = min; i < max; i++)
     {
-        if(a[i] > a[pivot] && a[pivot] > a[j])
+        if (arr[max] > arr[i])
         {
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            p++;
+            temp = arr[i];
+            arr[i] = arr[p];
+            arr[p] = temp;
         }
     }
-    
+
+    p++;
+    temp = arr[p];
+    arr[p] = arr[max];
+    arr[max] = temp;
+    return p;
 }
-return temp;
+
+int[] Q(int[] arr, int min, int max)
+{
+    if(min >= max)
+        return arr;
+    int p = F(arr, min, max);
+    Q(arr, min, p - 1);
+    Q(arr, p + 1, max);
+    return arr;
 }
-for(int k = 0; k < n; k++)  
-                Console.Write($" {a[k]}");
+
+Console.WriteLine("Введите размер массива: ");
+//int n = Convert.ToInt32(Console.ReadLine());
+//int n = 10;
+int[] arr = { 7, 6, 3, 9, 8, 5, 1, 0, 2, 4 };
+for (int i = 0; i < arr.Length; i++)
+    Console.Write($" {arr[i]}");
+Console.WriteLine();    
+
+arr = Q(arr, 0, arr.Length - 1);
+for (int i = 0; i < arr.Length; i++)
+    Console.Write($" {arr[i]}");
