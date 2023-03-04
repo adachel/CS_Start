@@ -57,6 +57,11 @@
 //     a = Convert.ToInt32(Console.ReadLine());
 
 
+// Заполнение массива в 2 строки
+// Random rand = new Random(); // Рандомный массив в две строки. это первая строка.
+// int[] resSerial = new int[N].Select(r => rand.Next(0, 5)).ToArray(); // Это вторая строка.
+
+
 
 // Создание одномерного массива дробных чисел Рандомно.
 // void InputArray(double[] array)

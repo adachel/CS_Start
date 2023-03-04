@@ -13,10 +13,10 @@ int temp = 0;
 Console.WriteLine();
 Console.WriteLine();
 
-int rec(int[] a, int n, int temp)
+int Frec(int[] a, int n, int temp)
 {
-    int i = 0;
-    int j = n - 1;
+    //int i = 0;
+    //int j = n - 1;
 
 
 for(int i = 0; i < pivot; i++)
@@ -32,7 +32,7 @@ for(int i = 0; i < pivot; i++)
     }
     
 }
-
+return temp;
 }
-for(int k = 0; k < n; k++)
+for(int k = 0; k < n; k++)  
                 Console.Write($" {a[k]}");
