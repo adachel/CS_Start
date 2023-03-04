@@ -1,5 +1,20 @@
 ﻿// Параллельные потоки. Умножение матриц параллельными потоками
 
+
+
+const int N = 100; //размер матрицы
+const int THREADS_NUMBER = 10;
+
+int[,] serialMulRes = new int[N, N]; //результат выполнения умножения матриц в однопотоке
+int[,] threadMulRes = new int[N, N]; //результат параллельного умножения матриц
+
+int[,] firstMatrix = MatrixGenerator(N, N); // Заполняем первую матрицу
+int[,] secondMatrix = MatrixGenerator(N, N); // Заполняем вторую матрицу
+
+SerialMatrixMul(firstMatrix, secondMatrix);
+PrepareParallelMatrixMul(firstMatrix, secondMatrix);
+Console.WriteLine(EqualityMatrix(serialMulRes, threadMulRes));
+
 int[,] MatrixGenerator(int rows, int columns) // Метод создания матрицы
 {
     Random _rand = new Random();
@@ -13,7 +28,8 @@ int[,] MatrixGenerator(int rows, int columns) // Метод создания м�
     }
     return res;
 }
-void SerialMatrixMul(int[,] a, int[,] b) // Последовательное умножение матриц
+
+void SerialMatrixMul(int[,] a, int[,] b)
 {
     if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Нельзя умножить такие матрицы");
 
@@ -28,6 +44,7 @@ void SerialMatrixMul(int[,] a, int[,] b) // Последовательное у�
         }
     }
 }
+
 void PrepareParallelMatrixMul(int[,] a, int[,] b)
 {
     if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Нельзя умножить такие матрицы");
@@ -48,6 +65,7 @@ void PrepareParallelMatrixMul(int[,] a, int[,] b)
         threadsList[i].Join();
     }
 }
+
 void ParallelMatrixMul(int[,] a, int[,] b, int startPos, int endPos)
 {
     for (int i = startPos; i < endPos; i++)
@@ -61,6 +79,7 @@ void ParallelMatrixMul(int[,] a, int[,] b, int startPos, int endPos)
         }
     }
 }
+
 bool EqualityMatrix(int[,] fmatrix, int[,] smatrix) // Сравнение матриц
 {
     bool res = true;
@@ -75,26 +94,3 @@ bool EqualityMatrix(int[,] fmatrix, int[,] smatrix) // Сравнение мат
 
     return res;
 }
-
-const int N = 100; //размер матрицы
-const int THREADS_NUMBER = 10;
-
-int[,] serialMulRes = new int[N, N]; //результат выполнения умножения матриц в однопотоке
-int[,] threadMulRes = new int[N, N]; //результат параллельного умножения матриц
-
-int[,] firstMatrix = MatrixGenerator(N, N); // Заполняем первую матрицу
-int[,] secondMatrix = MatrixGenerator(N, N); // Заполняем вторую матрицу
-
-SerialMatrixMul(firstMatrix, secondMatrix);
-PrepareParallelMatrixMul(firstMatrix, secondMatrix);
-Console.WriteLine(EqualityMatrix(serialMulRes, threadMulRes));
-
-
-
-
-
-
-
-
-
-
