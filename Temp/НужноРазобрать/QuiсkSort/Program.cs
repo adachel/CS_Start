@@ -1,43 +1,54 @@
-﻿int F(int[] arr, int min, int max)
+﻿void Creat(int[] array, int min, int max) // Создаем массив рандомно.
 {
-    int p = min - 1;
+    for(int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(min, max + 1); // Числа от 0 до 20.
+}
+int[] Output(int[] array) // Вывод массива
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write($" {array[i]}");
+    return array;
+}
+int Pivot(int[] array, int min, int max) // Опорный элемент
+{
+    int pivot = min - 1;
     int temp = 0;
     for (int i = min; i < max; i++)
     {
-        if (arr[max] > arr[i])
+        if (array[max] > array[i])
         {
-            p++;
-            temp = arr[i];
-            arr[i] = arr[p];
-            arr[p] = temp;
+            pivot++;
+            temp = array[pivot];
+            array[pivot] = array[i];
+            array[i] = temp;
         }
     }
-
-    p++;
-    temp = arr[p];
-    arr[p] = arr[max];
-    arr[max] = temp;
-    return p;
+    pivot++;
+    temp = array[pivot];
+    array[pivot] = array[max];
+    array[max] = temp;
+    return pivot;
 }
-
-int[] Q(int[] arr, int min, int max)
+int[] Quik(int[] array, int min, int max) // Рекурсивный расчет
 {
     if(min >= max)
-        return arr;
-    int p = F(arr, min, max);
-    Q(arr, min, p - 1);
-    Q(arr, p + 1, max);
-    return arr;
+        return array;
+    int pivot = Pivot(array, min, max); // pivot принимает значение из метода Pivot.    
+    Quik(array, min, pivot - 1);
+    Quik(array, pivot + 1, max);
+    return array;
 }
 
-Console.WriteLine("Введите размер массива: ");
-//int n = Convert.ToInt32(Console.ReadLine());
-//int n = 10;
-int[] arr = { 7, 6, 3, 9, 8, 5, 1, 0, 2, 4 };
-for (int i = 0; i < arr.Length; i++)
-    Console.Write($" {arr[i]}");
-Console.WriteLine();    
+Console.WriteLine("Введите минимальное значение массива: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите максимальное значение массива: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите длину массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] arr = new int[n];
+Creat(arr, min, max);
+Output(arr);
+Console.WriteLine();
+arr = Quik(arr, 0, arr.Length - 1);
+Output(arr);
 
-arr = Q(arr, 0, arr.Length - 1);
-for (int i = 0; i < arr.Length; i++)
-    Console.Write($" {arr[i]}");
